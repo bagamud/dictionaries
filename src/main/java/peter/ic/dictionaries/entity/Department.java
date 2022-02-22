@@ -3,8 +3,6 @@ package peter.ic.dictionaries.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import java.util.Set;
 
 @Entity
 public class Department {
@@ -13,19 +11,18 @@ public class Department {
     int code;
     int parentCode;
 
-    @Column(columnDefinition = "VARCHAR")
+    //    @Column(columnDefinition = "VARCHAR")
     String name;
 
-    @Column(columnDefinition = "VARCHAR")
+    //    @Column(columnDefinition = "VARCHAR")
     String fullName;
 
-    @Column(columnDefinition = "VARCHAR")
+    //    @Column(columnDefinition = "VARCHAR")
     String shortName;
-
     int regionCode;
-
-    @OneToMany
-    Set<Department> parentLevelDepartments;
+    private ElementRelationship anchor;
+    @Column(nullable = true)
+    private boolean active;
 
     public int getCode() {
         return code;
@@ -75,11 +72,20 @@ public class Department {
         this.regionCode = regionCode;
     }
 
-    public Set<Department> getParentLevelDepartments() {
-        return parentLevelDepartments;
+
+    public ElementRelationship getAnchor() {
+        return anchor;
     }
 
-    public void setParentLevelDepartments(Set<Department> parentLevelDepartments) {
-        this.parentLevelDepartments = parentLevelDepartments;
+    public void setAnchor(ElementRelationship anchor) {
+        this.anchor = anchor;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 }
