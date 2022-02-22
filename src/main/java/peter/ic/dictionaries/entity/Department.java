@@ -21,6 +21,7 @@ public class Department {
     String shortName;
     int regionCode;
     private ElementRelationship anchor;
+
     @Column(nullable = true)
     private boolean active;
 
