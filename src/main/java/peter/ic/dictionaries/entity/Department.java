@@ -3,83 +3,76 @@ package peter.ic.dictionaries.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Department {
 
     @Id
-    int code;
-    int parentCode;
+    int departmentCode;
+    int departmentParentCode;
 
     //    @Column(columnDefinition = "VARCHAR")
-    String name;
+    String departmentName;
 
     //    @Column(columnDefinition = "VARCHAR")
-    String fullName;
+    String departmentFullName;
 
     //    @Column(columnDefinition = "VARCHAR")
-    String shortName;
-    int regionCode;
-    private ElementRelationship anchor;
+    String departmentShortName;
+
+    @ManyToOne
+    private ElementRelationship elementRelationship;
 
     @Column(nullable = true)
     private boolean active;
 
-    public int getCode() {
-        return code;
+    public int getDepartmentCode() {
+        return departmentCode;
     }
 
-    public void setCode(int code) {
-        this.code = code;
+    public void setDepartmentCode(int departmentCode) {
+        this.departmentCode = departmentCode;
     }
 
-    public int getParentCode() {
-        return parentCode;
+    public int getDepartmentParentCode() {
+        return departmentParentCode;
     }
 
-    public void setParentCode(int parentCode) {
-        this.parentCode = parentCode;
+    public void setDepartmentParentCode(int departmentParentCode) {
+        this.departmentParentCode = departmentParentCode;
     }
 
-    public String getName() {
-        return name;
+    public String getDepartmentName() {
+        return departmentName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDepartmentName(String departmentName) {
+        this.departmentName = departmentName;
     }
 
-    public String getFullName() {
-        return fullName;
+    public String getDepartmentFullName() {
+        return departmentFullName;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setDepartmentFullName(String departmentFullName) {
+        this.departmentFullName = departmentFullName;
     }
 
-    public String getShortName() {
-        return shortName;
+    public String getDepartmentShortName() {
+        return departmentShortName;
     }
 
-    public void setShortName(String shortName) {
-        this.shortName = shortName;
+    public void setDepartmentShortName(String departmentShortName) {
+        this.departmentShortName = departmentShortName;
     }
 
-    public int getRegionCode() {
-        return regionCode;
+    public ElementRelationship getElementRelationship() {
+        return elementRelationship;
     }
 
-    public void setRegionCode(int regionCode) {
-        this.regionCode = regionCode;
-    }
-
-
-    public ElementRelationship getAnchor() {
-        return anchor;
-    }
-
-    public void setAnchor(ElementRelationship anchor) {
-        this.anchor = anchor;
+    public void setElementRelationship(ElementRelationship elementRelationship) {
+        this.elementRelationship = elementRelationship;
     }
 
     public boolean isActive() {

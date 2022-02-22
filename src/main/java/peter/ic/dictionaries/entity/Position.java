@@ -2,50 +2,51 @@ package peter.ic.dictionaries.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Position {
 
     @Id
-    int code;
+    int positionCode;
 
     //    @Column(columnDefinition = "VARCHAR")
-    String title;
+    String positionTitle;
 
-    private int parentCode;
+    private int positionParentCode;
 
-    private ElementRelationship elementRelationship;
+    @ManyToOne
+    private PositionType positionType;
 
-
-    public int getCode() {
-        return code;
+    public int getPositionCode() {
+        return positionCode;
     }
 
-    public void setCode(int code) {
-        this.code = code;
+    public void setPositionCode(int positionCode) {
+        this.positionCode = positionCode;
     }
 
-    public String getTitle() {
-        return title;
+    public String getPositionTitle() {
+        return positionTitle;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setPositionTitle(String positionTitle) {
+        this.positionTitle = positionTitle;
     }
 
-    public ElementRelationship getElementRelationship() {
-        return elementRelationship;
+    public int getPositionParentCode() {
+        return positionParentCode;
     }
 
-    public void setElementRelationship(ElementRelationship elementRelationship) {
-        this.elementRelationship = elementRelationship;
+    public void setPositionParentCode(int positionParentCode) {
+        this.positionParentCode = positionParentCode;
     }
 
-    public int getParentCode() {
-        return parentCode;
+    public PositionType getPositionType() {
+        return positionType;
     }
 
-    public void setParentCode(int parentCode) {
-        this.parentCode = parentCode;
+    public void setPositionType(PositionType positionType) {
+        this.positionType = positionType;
     }
 }

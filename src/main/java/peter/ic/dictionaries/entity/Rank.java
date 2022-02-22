@@ -7,34 +7,34 @@ import javax.persistence.Id;
 public class Rank {
 
     @Id
-    private int id;
+    private int rankId;
 
     //    @Column(columnDefinition = "VARCHAR")
-    private String title;
+    private String rankTitle;
 
-    private int tariff;
+    private int rankTariff;
 
-    public int getId() {
-        return id;
+    public int getRankId() {
+        return rankId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setRankId(int rankId) {
+        this.rankId = rankId;
     }
 
-    public String getTitle() {
-        return title;
+    public String getRankTitle() {
+        return rankTitle;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setRankTitle(String rankTitle) {
+        this.rankTitle = rankTitle;
     }
 
-    public int getTariff() {
-        return tariff;
+    public int getRankTariff() {
+        return rankTariff;
     }
 
-    public void setTariff(int tariff) {
-        this.tariff = tariff;
+    public void setRankTariff(int rankTariff) {
+        this.rankTariff = rankTariff;
     }
 }
