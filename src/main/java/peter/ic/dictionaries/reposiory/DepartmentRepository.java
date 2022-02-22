@@ -7,5 +7,5 @@ import peter.ic.dictionaries.entity.Department;
 
 @RepositoryRestResource(collectionResourceRel = "department", path = "department")
 public interface DepartmentRepository extends PagingAndSortingRepository<Department, Integer> {
-    Department findByCode(@Param("code") int code);
+    Department findByDepartmentCode(@Param("code") int code);
 }
